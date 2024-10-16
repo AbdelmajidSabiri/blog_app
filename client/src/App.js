@@ -31,12 +31,13 @@ const router = createBrowserRouter([
     path: "/write",
     element: <Write/>,
   },
-  
+
   {
   path: "/login",
   element: <Login/>,
   },
 ]);
+
 
 function App() {
   return (
