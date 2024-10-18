@@ -11,6 +11,7 @@ import Write from "./pages/Write"
 import Login from "./pages/Login"
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import "./style.scss"
 
 
 const Layout = () => {
@@ -34,12 +35,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/register",
-        element: <Register/>
-      },
-    
-      {
-        path: "/single",
+        path: "/post/:id",
         element: <Single/>
       },
       
@@ -48,11 +44,18 @@ const router = createBrowserRouter([
         element: <Write/>
       },
     
-      {
-      path: "/login",
-      element: <Login/>
-      },
+
     ]
+  },
+
+  {
+    path: "/register",
+    element: <Register/>
+  },
+
+  {
+    path: "/login",
+    element: <Login/>
   },
 
 ]);
@@ -60,8 +63,10 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div>
-      <RouterProvider router = {router}/>
+    <div className="app">
+      <div className="container">
+        <RouterProvider router = {router}/>
+      </div>
     </div>
   );
 }
